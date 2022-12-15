@@ -15,4 +15,3 @@ public protocol SearchProviderProtocol: AnyObject {
     ///   - completion: Result of the search: list of podcast models or a error model
     func getByQuery(_ query: SearchModel, completion: @escaping (SearchProviderResult) -> Void)
 }
-

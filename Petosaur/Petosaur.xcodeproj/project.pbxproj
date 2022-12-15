@@ -17,6 +17,7 @@
 		4F070466294A747D00372873 /* SearchResultDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F07045D294A747D00372873 /* SearchResultDataProvider.swift */; };
 		4F070467294A747D00372873 /* CategoriesProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F07045E294A747D00372873 /* CategoriesProviderProtocol.swift */; };
 		4F070468294A747D00372873 /* SearchProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F07045F294A747D00372873 /* SearchProviderProtocol.swift */; };
+		4F07046D294BB41700372873 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 4F07046C294BB41700372873 /* Swinject */; };
 		4F3CF0C62923FA410023F685 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3CF0C52923FA410023F685 /* AppDelegate.swift */; };
 		4F3CF0C82923FA410023F685 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3CF0C72923FA410023F685 /* SceneDelegate.swift */; };
 		4F3CF0CF2923FA420023F685 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F3CF0CE2923FA420023F685 /* Assets.xcassets */; };
@@ -116,6 +117,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4FF81187294A40F900B17562 /* PetosaurKit.framework in Frameworks */,
+				4F07046D294BB41700372873 /* Swinject in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -184,6 +186,22 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		4F070469294A784100372873 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				4F3CF0C52923FA410023F685 /* AppDelegate.swift */,
+				4F3CF0C72923FA410023F685 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		4F07046A294A787400372873 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
 		4F3CF0B92923FA410023F685 = {
 			isa = PBXGroup;
 			children = (
@@ -211,8 +229,8 @@
 		4F3CF0C42923FA410023F685 /* Petosaur */ = {
 			isa = PBXGroup;
 			children = (
-				4F3CF0C52923FA410023F685 /* AppDelegate.swift */,
-				4F3CF0C72923FA410023F685 /* SceneDelegate.swift */,
+				4F070469294A784100372873 /* App */,
+				4F07046A294A787400372873 /* DI */,
 				4F3CF0CE2923FA420023F685 /* Assets.xcassets */,
 				4F3CF0D02923FA420023F685 /* LaunchScreen.storyboard */,
 				4F3CF0D32923FA420023F685 /* Info.plist */,
@@ -284,6 +302,7 @@
 			);
 			name = Petosaur;
 			packageProductDependencies = (
+				4F07046C294BB41700372873 /* Swinject */,
 			);
 			productName = Petosaur;
 			productReference = 4F3CF0C22923FA410023F685 /* Petosaur.app */;
@@ -406,6 +425,7 @@
 			mainGroup = 4F3CF0B92923FA410023F685;
 			packageReferences = (
 				4F070427294A71C100372873 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				4F07046B294BB41700372873 /* XCRemoteSwiftPackageReference "Swinject" */,
 			);
 			productRefGroup = 4F3CF0C32923FA410023F685 /* Products */;
 			projectDirPath = "";
@@ -679,7 +699,6 @@
 				INFOPLIST_FILE = Petosaur/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -710,7 +729,6 @@
 				INFOPLIST_FILE = Petosaur/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -977,6 +995,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		4F07046B294BB41700372873 /* XCRemoteSwiftPackageReference "Swinject" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Swinject/Swinject";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -984,6 +1010,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 4F070427294A71C100372873 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		4F07046C294BB41700372873 /* Swinject */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4F07046B294BB41700372873 /* XCRemoteSwiftPackageReference "Swinject" */;
+			productName = Swinject;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
