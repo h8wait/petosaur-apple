@@ -6,18 +6,21 @@
 //
 
 import UIKit
-import Swinject
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
-    let container: Resolver = {
-        let container = Container()
-        return container
-    }()
+    private let container = PetosaurDIContainer()
+    
+    var resolver: Resolver {
+        container.resolver
+    }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        container.configure()
+        
         return true
     }
     

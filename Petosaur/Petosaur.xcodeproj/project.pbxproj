@@ -18,6 +18,10 @@
 		4F070467294A747D00372873 /* CategoriesProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F07045E294A747D00372873 /* CategoriesProviderProtocol.swift */; };
 		4F070468294A747D00372873 /* SearchProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F07045F294A747D00372873 /* SearchProviderProtocol.swift */; };
 		4F07046D294BB41700372873 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 4F07046C294BB41700372873 /* Swinject */; };
+		4F1A2FD0294CF614007428CC /* PetosaurDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1A2FCF294CF614007428CC /* PetosaurDIContainer.swift */; };
+		4F1A2FD2294CFB0F007428CC /* ServicesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1A2FD1294CFB0F007428CC /* ServicesAssembly.swift */; };
+		4F1A2FD4294CFB34007428CC /* ModulesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1A2FD3294CFB34007428CC /* ModulesAssembly.swift */; };
+		4F1A2FD6294D0D1E007428CC /* SceneService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1A2FD5294D0D1E007428CC /* SceneService.swift */; };
 		4F3CF0C62923FA410023F685 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3CF0C52923FA410023F685 /* AppDelegate.swift */; };
 		4F3CF0C82923FA410023F685 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3CF0C72923FA410023F685 /* SceneDelegate.swift */; };
 		4F3CF0CF2923FA420023F685 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F3CF0CE2923FA420023F685 /* Assets.xcassets */; };
@@ -94,6 +98,10 @@
 		4F07045D294A747D00372873 /* SearchResultDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultDataProvider.swift; sourceTree = "<group>"; };
 		4F07045E294A747D00372873 /* CategoriesProviderProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesProviderProtocol.swift; sourceTree = "<group>"; };
 		4F07045F294A747D00372873 /* SearchProviderProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchProviderProtocol.swift; sourceTree = "<group>"; };
+		4F1A2FCF294CF614007428CC /* PetosaurDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetosaurDIContainer.swift; sourceTree = "<group>"; };
+		4F1A2FD1294CFB0F007428CC /* ServicesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesAssembly.swift; sourceTree = "<group>"; };
+		4F1A2FD3294CFB34007428CC /* ModulesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModulesAssembly.swift; sourceTree = "<group>"; };
+		4F1A2FD5294D0D1E007428CC /* SceneService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneService.swift; sourceTree = "<group>"; };
 		4F3CF0C22923FA410023F685 /* Petosaur.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Petosaur.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F3CF0C52923FA410023F685 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4F3CF0C72923FA410023F685 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -191,6 +199,7 @@
 			children = (
 				4F3CF0C52923FA410023F685 /* AppDelegate.swift */,
 				4F3CF0C72923FA410023F685 /* SceneDelegate.swift */,
+				4F1A2FD5294D0D1E007428CC /* SceneService.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -198,6 +207,9 @@
 		4F07046A294A787400372873 /* DI */ = {
 			isa = PBXGroup;
 			children = (
+				4F1A2FCF294CF614007428CC /* PetosaurDIContainer.swift */,
+				4F1A2FD1294CFB0F007428CC /* ServicesAssembly.swift */,
+				4F1A2FD3294CFB34007428CC /* ModulesAssembly.swift */,
 			);
 			path = DI;
 			sourceTree = "<group>";
@@ -485,8 +497,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F1A2FD6294D0D1E007428CC /* SceneService.swift in Sources */,
 				4F3CF0C62923FA410023F685 /* AppDelegate.swift in Sources */,
+				4F1A2FD2294CFB0F007428CC /* ServicesAssembly.swift in Sources */,
+				4F1A2FD0294CF614007428CC /* PetosaurDIContainer.swift in Sources */,
 				4F3CF0C82923FA410023F685 /* SceneDelegate.swift in Sources */,
+				4F1A2FD4294CFB34007428CC /* ModulesAssembly.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
