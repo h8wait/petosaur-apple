@@ -9,6 +9,11 @@ import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
+    private var service: SceneServiceProtocol? {
+        let appDelegate = (UIApplication.shared.delegate as? AppDelegate)
+        return appDelegate?.resolver.resolve(SceneServiceProtocol.self)
+    }
+    
     var window: UIWindow?
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
@@ -16,14 +21,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let windowScene = (scene as? UIWindowScene),
-              let resolver = (UIApplication.shared.delegate as? AppDelegate)?.resolver else { return }
+              let service = service else { return }
         
-        let service = resolver.resolve(SceneServiceProtocol.self)
-        
-        let window = UIWindow(frame: UIScreen.main.bounds)
-        service?.connectRootModuleTo(windowScene, in: window)
-        self.window = window
-        window.makeKeyAndVisible()
+        service.connectRootModuleTo(windowScene, delegate: self)
     }
     
     func sceneDidDisconnect(_ scene: UIScene) {

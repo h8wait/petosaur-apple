@@ -29,6 +29,18 @@
 		4F3CF0DD2923FA420023F685 /* PetosaurTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3CF0DC2923FA420023F685 /* PetosaurTests.swift */; };
 		4F3CF0E72923FA420023F685 /* PetosaurUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3CF0E62923FA420023F685 /* PetosaurUITests.swift */; };
 		4F3CF0E92923FA420023F685 /* PetosaurUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3CF0E82923FA420023F685 /* PetosaurUITestsLaunchTests.swift */; };
+		4FC8705C2950DE7D000AF74A /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC870562950DE7D000AF74A /* SearchPresenter.swift */; };
+		4FC8705D2950DE7D000AF74A /* SearchModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC870572950DE7D000AF74A /* SearchModuleBuilder.swift */; };
+		4FC8705E2950DE7D000AF74A /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC870582950DE7D000AF74A /* SearchViewController.swift */; };
+		4FC8705F2950DE7D000AF74A /* SearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC870592950DE7D000AF74A /* SearchRouter.swift */; };
+		4FC870602950DE7D000AF74A /* SearchProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC8705A2950DE7D000AF74A /* SearchProtocols.swift */; };
+		4FC870612950DE7D000AF74A /* SearchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC8705B2950DE7D000AF74A /* SearchInteractor.swift */; };
+		4FC870662950DFFF000AF74A /* ConfigurationEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC870642950DFFE000AF74A /* ConfigurationEntity.swift */; };
+		4FC870672950DFFF000AF74A /* PodcastEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC870652950DFFF000AF74A /* PodcastEntity.swift */; };
+		4FC8706A2950E089000AF74A /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4FC870692950E089000AF74A /* RxSwift */; };
+		4FC8706D2950E170000AF74A /* ConfigurationProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC8706C2950E170000AF74A /* ConfigurationProtocols.swift */; };
+		4FC870712950E1DE000AF74A /* PodcastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC8706F2950E1DE000AF74A /* PodcastCell.swift */; };
+		4FC870722950E1DE000AF74A /* LoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC870702950E1DE000AF74A /* LoadingCell.swift */; };
 		4FF8117C294A40F900B17562 /* PetosaurKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FF81174294A40F800B17562 /* PetosaurKit.framework */; };
 		4FF81183294A40F900B17562 /* PetosaurKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF81182294A40F900B17562 /* PetosaurKitTests.swift */; };
 		4FF81184294A40F900B17562 /* PetosaurKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 4FF81176294A40F800B17562 /* PetosaurKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -113,6 +125,17 @@
 		4F3CF0E22923FA420023F685 /* PetosaurUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PetosaurUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F3CF0E62923FA420023F685 /* PetosaurUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetosaurUITests.swift; sourceTree = "<group>"; };
 		4F3CF0E82923FA420023F685 /* PetosaurUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetosaurUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		4FC870562950DE7D000AF74A /* SearchPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
+		4FC870572950DE7D000AF74A /* SearchModuleBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchModuleBuilder.swift; sourceTree = "<group>"; };
+		4FC870582950DE7D000AF74A /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		4FC870592950DE7D000AF74A /* SearchRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchRouter.swift; sourceTree = "<group>"; };
+		4FC8705A2950DE7D000AF74A /* SearchProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchProtocols.swift; sourceTree = "<group>"; };
+		4FC8705B2950DE7D000AF74A /* SearchInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchInteractor.swift; sourceTree = "<group>"; };
+		4FC870642950DFFE000AF74A /* ConfigurationEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurationEntity.swift; sourceTree = "<group>"; };
+		4FC870652950DFFF000AF74A /* PodcastEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PodcastEntity.swift; sourceTree = "<group>"; };
+		4FC8706C2950E170000AF74A /* ConfigurationProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurationProtocols.swift; sourceTree = "<group>"; };
+		4FC8706F2950E1DE000AF74A /* PodcastCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PodcastCell.swift; sourceTree = "<group>"; };
+		4FC870702950E1DE000AF74A /* LoadingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingCell.swift; sourceTree = "<group>"; };
 		4FF81174294A40F800B17562 /* PetosaurKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PetosaurKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FF81176294A40F800B17562 /* PetosaurKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PetosaurKit.h; sourceTree = "<group>"; };
 		4FF8117B294A40F900B17562 /* PetosaurKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PetosaurKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -124,6 +147,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FC8706A2950E089000AF74A /* RxSwift in Frameworks */,
 				4FF81187294A40F900B17562 /* PetosaurKit.framework in Frameworks */,
 				4F07046D294BB41700372873 /* Swinject in Frameworks */,
 			);
@@ -243,6 +267,8 @@
 			children = (
 				4F070469294A784100372873 /* App */,
 				4F07046A294A787400372873 /* DI */,
+				4FC870552950DE52000AF74A /* Modules */,
+				4FC8706E2950E1B4000AF74A /* UI */,
 				4F3CF0CE2923FA420023F685 /* Assets.xcassets */,
 				4F3CF0D02923FA420023F685 /* LaunchScreen.storyboard */,
 				4F3CF0D32923FA420023F685 /* Info.plist */,
@@ -265,6 +291,55 @@
 				4F3CF0E82923FA420023F685 /* PetosaurUITestsLaunchTests.swift */,
 			);
 			path = PetosaurUITests;
+			sourceTree = "<group>";
+		};
+		4FC870552950DE52000AF74A /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				4FC870632950DF7E000AF74A /* Entity */,
+				4FC870622950DEBD000AF74A /* Search */,
+				4FC8706B2950E131000AF74A /* Configuration */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		4FC870622950DEBD000AF74A /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				4FC8705B2950DE7D000AF74A /* SearchInteractor.swift */,
+				4FC870572950DE7D000AF74A /* SearchModuleBuilder.swift */,
+				4FC870562950DE7D000AF74A /* SearchPresenter.swift */,
+				4FC8705A2950DE7D000AF74A /* SearchProtocols.swift */,
+				4FC870592950DE7D000AF74A /* SearchRouter.swift */,
+				4FC870582950DE7D000AF74A /* SearchViewController.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		4FC870632950DF7E000AF74A /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				4FC870642950DFFE000AF74A /* ConfigurationEntity.swift */,
+				4FC870652950DFFF000AF74A /* PodcastEntity.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		4FC8706B2950E131000AF74A /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				4FC8706C2950E170000AF74A /* ConfigurationProtocols.swift */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		4FC8706E2950E1B4000AF74A /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				4FC870702950E1DE000AF74A /* LoadingCell.swift */,
+				4FC8706F2950E1DE000AF74A /* PodcastCell.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 		4FF81175294A40F800B17562 /* PetosaurKit */ = {
@@ -315,6 +390,7 @@
 			name = Petosaur;
 			packageProductDependencies = (
 				4F07046C294BB41700372873 /* Swinject */,
+				4FC870692950E089000AF74A /* RxSwift */,
 			);
 			productName = Petosaur;
 			productReference = 4F3CF0C22923FA410023F685 /* Petosaur.app */;
@@ -438,6 +514,7 @@
 			packageReferences = (
 				4F070427294A71C100372873 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				4F07046B294BB41700372873 /* XCRemoteSwiftPackageReference "Swinject" */,
+				4FC870682950E089000AF74A /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = 4F3CF0C32923FA410023F685 /* Products */;
 			projectDirPath = "";
@@ -498,11 +575,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F1A2FD6294D0D1E007428CC /* SceneService.swift in Sources */,
+				4FC8706D2950E170000AF74A /* ConfigurationProtocols.swift in Sources */,
 				4F3CF0C62923FA410023F685 /* AppDelegate.swift in Sources */,
 				4F1A2FD2294CFB0F007428CC /* ServicesAssembly.swift in Sources */,
+				4FC870602950DE7D000AF74A /* SearchProtocols.swift in Sources */,
+				4FC8705E2950DE7D000AF74A /* SearchViewController.swift in Sources */,
 				4F1A2FD0294CF614007428CC /* PetosaurDIContainer.swift in Sources */,
+				4FC870612950DE7D000AF74A /* SearchInteractor.swift in Sources */,
 				4F3CF0C82923FA410023F685 /* SceneDelegate.swift in Sources */,
+				4FC8705F2950DE7D000AF74A /* SearchRouter.swift in Sources */,
+				4FC870712950E1DE000AF74A /* PodcastCell.swift in Sources */,
+				4FC870722950E1DE000AF74A /* LoadingCell.swift in Sources */,
+				4FC870672950DFFF000AF74A /* PodcastEntity.swift in Sources */,
 				4F1A2FD4294CFB34007428CC /* ModulesAssembly.swift in Sources */,
+				4FC8705C2950DE7D000AF74A /* SearchPresenter.swift in Sources */,
+				4FC8705D2950DE7D000AF74A /* SearchModuleBuilder.swift in Sources */,
+				4FC870662950DFFF000AF74A /* ConfigurationEntity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1019,6 +1107,14 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		4FC870682950E089000AF74A /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1031,6 +1127,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 4F07046B294BB41700372873 /* XCRemoteSwiftPackageReference "Swinject" */;
 			productName = Swinject;
+		};
+		4FC870692950E089000AF74A /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4FC870682950E089000AF74A /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -9,7 +9,7 @@ import UIKit
 
 protocol SceneServiceProtocol {
     
-    func connectRootModuleTo(_ scene: UIWindowScene, in window: UIWindow)
+    func connectRootModuleTo(_ scene: UIWindowScene, delegate: SceneDelegate)
 }
 
 final class SceneService {
@@ -23,9 +23,14 @@ final class SceneService {
 
 extension SceneService: SceneServiceProtocol {
     
-    func connectRootModuleTo(_ scene: UIWindowScene, in window: UIWindow) {
+    func connectRootModuleTo(_ scene: UIWindowScene, delegate: SceneDelegate) {
+        
+        let window = UIWindow(frame: UIScreen.main.bounds)
+        delegate.window = window
+        
+        let rootModuleFactory = resolver.resolve(SearchModuleBuilderProtocol.self)
+        window.rootViewController = rootModuleFactory?.createSearchModule()
         window.windowScene = scene
-        window.rootViewController = UIViewController()
-        window.rootViewController?.view.backgroundColor = .red
+        window.makeKeyAndVisible()
     }
 }

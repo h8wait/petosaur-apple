@@ -11,5 +11,6 @@ final class ModulesAssembly: Assembly {
     
     func assemble(container: Container) {
         
+        container.register(SearchModuleBuilderProtocol.self) { r in SearchModuleBuilder(resolver: r) }
     }
 }
