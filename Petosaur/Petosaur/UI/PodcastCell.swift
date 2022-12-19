@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 final class PodcastCell: UITableViewCell {
     
@@ -19,7 +20,6 @@ final class PodcastCell: UITableViewCell {
         label.font = .systemFont(ofSize: 16)
         label.textColor = .black
         label.numberOfLines = 0
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
@@ -28,7 +28,6 @@ final class PodcastCell: UITableViewCell {
         label.font = .systemFont(ofSize: 14)
         label.textColor = .lightGray
         label.numberOfLines = 0
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
@@ -57,35 +56,32 @@ final class PodcastCell: UITableViewCell {
     }
     
     private func configureImageView() {
+        
         addSubview(artImage)
-        
-        let imageHeightConstraint = artImage.heightAnchor.constraint(equalToConstant: artImageSize)
-        imageHeightConstraint.priority = .defaultHigh
-        
-        NSLayoutConstraint.activate([
-            artImage.topAnchor.constraint(equalTo: topAnchor, constant: 8),
-            artImage.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -8),
-            imageHeightConstraint,
-            artImage.widthAnchor.constraint(equalToConstant: artImageSize),
-            artImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16)
-        ])
+        artImage.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(8)
+            make.bottom.equalToSuperview().offset(-8)
+            make.height.equalTo(artImageSize).priority(.high)
+            make.width.equalTo(artImageSize)
+            make.leading.equalToSuperview().offset(16)
+        }
     }
     
     private func configureLabels() {
         
         addSubview(titleLabel)
-        NSLayoutConstraint.activate([
-            titleLabel.leadingAnchor.constraint(equalTo: artImage.trailingAnchor, constant: 8),
-            titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8),
-            titleLabel.topAnchor.constraint(equalTo: artImage.topAnchor, constant: 8)
-        ])
+        titleLabel.snp.makeConstraints { make in
+            make.leading.equalTo(artImage.snp.trailing).offset(8)
+            make.trailing.equalToSuperview().offset(-8)
+            make.top.equalTo(artImage.snp.top).offset(8)
+        }
         
         addSubview(publisherLabel)
-        NSLayoutConstraint.activate([
-            publisherLabel.leadingAnchor.constraint(equalTo: artImage.trailingAnchor, constant: 8),
-            publisherLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8),
-            publisherLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor)
-        ])
+        publisherLabel.snp.makeConstraints { make in
+            make.leading.equalTo(artImage.snp.trailing).offset(8)
+            make.trailing.equalToSuperview().offset(-8)
+            make.top.equalTo(titleLabel.snp.bottom)
+        }
     }
     
     private func setImage(from url: URL?) {

@@ -41,6 +41,7 @@
 		4FC8706D2950E170000AF74A /* ConfigurationProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC8706C2950E170000AF74A /* ConfigurationProtocols.swift */; };
 		4FC870712950E1DE000AF74A /* PodcastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC8706F2950E1DE000AF74A /* PodcastCell.swift */; };
 		4FC870722950E1DE000AF74A /* LoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC870702950E1DE000AF74A /* LoadingCell.swift */; };
+		4FC870752950F410000AF74A /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 4FC870742950F410000AF74A /* SnapKit */; };
 		4FF8117C294A40F900B17562 /* PetosaurKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FF81174294A40F800B17562 /* PetosaurKit.framework */; };
 		4FF81183294A40F900B17562 /* PetosaurKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF81182294A40F900B17562 /* PetosaurKitTests.swift */; };
 		4FF81184294A40F900B17562 /* PetosaurKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 4FF81176294A40F800B17562 /* PetosaurKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -148,6 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4FC8706A2950E089000AF74A /* RxSwift in Frameworks */,
+				4FC870752950F410000AF74A /* SnapKit in Frameworks */,
 				4FF81187294A40F900B17562 /* PetosaurKit.framework in Frameworks */,
 				4F07046D294BB41700372873 /* Swinject in Frameworks */,
 			);
@@ -391,6 +393,7 @@
 			packageProductDependencies = (
 				4F07046C294BB41700372873 /* Swinject */,
 				4FC870692950E089000AF74A /* RxSwift */,
+				4FC870742950F410000AF74A /* SnapKit */,
 			);
 			productName = Petosaur;
 			productReference = 4F3CF0C22923FA410023F685 /* Petosaur.app */;
@@ -515,6 +518,7 @@
 				4F070427294A71C100372873 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				4F07046B294BB41700372873 /* XCRemoteSwiftPackageReference "Swinject" */,
 				4FC870682950E089000AF74A /* XCRemoteSwiftPackageReference "RxSwift" */,
+				4FC870732950F410000AF74A /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = 4F3CF0C32923FA410023F685 /* Products */;
 			projectDirPath = "";
@@ -1115,6 +1119,14 @@
 				minimumVersion = 6.0.0;
 			};
 		};
+		4FC870732950F410000AF74A /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1132,6 +1144,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 4FC870682950E089000AF74A /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxSwift;
+		};
+		4FC870742950F410000AF74A /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4FC870732950F410000AF74A /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
