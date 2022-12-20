@@ -29,6 +29,12 @@
 		4F3CF0DD2923FA420023F685 /* PetosaurTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3CF0DC2923FA420023F685 /* PetosaurTests.swift */; };
 		4F3CF0E72923FA420023F685 /* PetosaurUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3CF0E62923FA420023F685 /* PetosaurUITests.swift */; };
 		4F3CF0E92923FA420023F685 /* PetosaurUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3CF0E82923FA420023F685 /* PetosaurUITestsLaunchTests.swift */; };
+		4F914F7B295229790085B9C7 /* ConfigurationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F914F76295229790085B9C7 /* ConfigurationRouter.swift */; };
+		4F914F7C295229790085B9C7 /* ConfigurationModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F914F77295229790085B9C7 /* ConfigurationModuleBuilder.swift */; };
+		4F914F7D295229790085B9C7 /* ConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F914F78295229790085B9C7 /* ConfigurationViewController.swift */; };
+		4F914F7E295229790085B9C7 /* ConfigurationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F914F79295229790085B9C7 /* ConfigurationInteractor.swift */; };
+		4F914F7F295229790085B9C7 /* ConfigurationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F914F7A295229790085B9C7 /* ConfigurationPresenter.swift */; };
+		4F914F82295229F70085B9C7 /* CategoriesProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F914F81295229F70085B9C7 /* CategoriesProtocols.swift */; };
 		4FC8705C2950DE7D000AF74A /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC870562950DE7D000AF74A /* SearchPresenter.swift */; };
 		4FC8705D2950DE7D000AF74A /* SearchModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC870572950DE7D000AF74A /* SearchModuleBuilder.swift */; };
 		4FC8705E2950DE7D000AF74A /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC870582950DE7D000AF74A /* SearchViewController.swift */; };
@@ -126,6 +132,12 @@
 		4F3CF0E22923FA420023F685 /* PetosaurUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PetosaurUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F3CF0E62923FA420023F685 /* PetosaurUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetosaurUITests.swift; sourceTree = "<group>"; };
 		4F3CF0E82923FA420023F685 /* PetosaurUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetosaurUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		4F914F76295229790085B9C7 /* ConfigurationRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurationRouter.swift; sourceTree = "<group>"; };
+		4F914F77295229790085B9C7 /* ConfigurationModuleBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurationModuleBuilder.swift; sourceTree = "<group>"; };
+		4F914F78295229790085B9C7 /* ConfigurationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurationViewController.swift; sourceTree = "<group>"; };
+		4F914F79295229790085B9C7 /* ConfigurationInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurationInteractor.swift; sourceTree = "<group>"; };
+		4F914F7A295229790085B9C7 /* ConfigurationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurationPresenter.swift; sourceTree = "<group>"; };
+		4F914F81295229F70085B9C7 /* CategoriesProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesProtocols.swift; sourceTree = "<group>"; };
 		4FC870562950DE7D000AF74A /* SearchPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
 		4FC870572950DE7D000AF74A /* SearchModuleBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchModuleBuilder.swift; sourceTree = "<group>"; };
 		4FC870582950DE7D000AF74A /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -295,12 +307,21 @@
 			path = PetosaurUITests;
 			sourceTree = "<group>";
 		};
+		4F914F80295229B50085B9C7 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				4F914F81295229F70085B9C7 /* CategoriesProtocols.swift */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
 		4FC870552950DE52000AF74A /* Modules */ = {
 			isa = PBXGroup;
 			children = (
 				4FC870632950DF7E000AF74A /* Entity */,
 				4FC870622950DEBD000AF74A /* Search */,
 				4FC8706B2950E131000AF74A /* Configuration */,
+				4F914F80295229B50085B9C7 /* Categories */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -330,7 +351,12 @@
 		4FC8706B2950E131000AF74A /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
+				4F914F79295229790085B9C7 /* ConfigurationInteractor.swift */,
+				4F914F77295229790085B9C7 /* ConfigurationModuleBuilder.swift */,
+				4F914F7A295229790085B9C7 /* ConfigurationPresenter.swift */,
 				4FC8706C2950E170000AF74A /* ConfigurationProtocols.swift */,
+				4F914F76295229790085B9C7 /* ConfigurationRouter.swift */,
+				4F914F78295229790085B9C7 /* ConfigurationViewController.swift */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -579,9 +605,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F1A2FD6294D0D1E007428CC /* SceneService.swift in Sources */,
+				4F914F7B295229790085B9C7 /* ConfigurationRouter.swift in Sources */,
 				4FC8706D2950E170000AF74A /* ConfigurationProtocols.swift in Sources */,
 				4F3CF0C62923FA410023F685 /* AppDelegate.swift in Sources */,
 				4F1A2FD2294CFB0F007428CC /* ServicesAssembly.swift in Sources */,
+				4F914F7E295229790085B9C7 /* ConfigurationInteractor.swift in Sources */,
 				4FC870602950DE7D000AF74A /* SearchProtocols.swift in Sources */,
 				4FC8705E2950DE7D000AF74A /* SearchViewController.swift in Sources */,
 				4F1A2FD0294CF614007428CC /* PetosaurDIContainer.swift in Sources */,
@@ -590,11 +618,15 @@
 				4FC8705F2950DE7D000AF74A /* SearchRouter.swift in Sources */,
 				4FC870712950E1DE000AF74A /* PodcastCell.swift in Sources */,
 				4FC870722950E1DE000AF74A /* LoadingCell.swift in Sources */,
+				4F914F7D295229790085B9C7 /* ConfigurationViewController.swift in Sources */,
+				4F914F7F295229790085B9C7 /* ConfigurationPresenter.swift in Sources */,
 				4FC870672950DFFF000AF74A /* PodcastEntity.swift in Sources */,
 				4F1A2FD4294CFB34007428CC /* ModulesAssembly.swift in Sources */,
+				4F914F82295229F70085B9C7 /* CategoriesProtocols.swift in Sources */,
 				4FC8705C2950DE7D000AF74A /* SearchPresenter.swift in Sources */,
 				4FC8705D2950DE7D000AF74A /* SearchModuleBuilder.swift in Sources */,
 				4FC870662950DFFF000AF74A /* ConfigurationEntity.swift in Sources */,
+				4F914F7C295229790085B9C7 /* ConfigurationModuleBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

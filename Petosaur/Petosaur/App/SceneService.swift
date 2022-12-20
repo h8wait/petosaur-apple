@@ -28,8 +28,8 @@ extension SceneService: SceneServiceProtocol {
         let window = UIWindow(frame: UIScreen.main.bounds)
         delegate.window = window
         
-        let rootModuleFactory = resolver.resolve(SearchModuleBuilderProtocol.self)
-        window.rootViewController = rootModuleFactory?.createSearchModule()
+        let rootModuleBuilder = resolver.resolve(SearchModuleBuilderProtocol.self)
+        window.rootViewController = rootModuleBuilder?.createSearchModule()
         window.windowScene = scene
         window.makeKeyAndVisible()
     }

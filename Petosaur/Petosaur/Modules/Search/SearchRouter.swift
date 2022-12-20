@@ -9,15 +9,15 @@ import UIKit
 
 final class SearchRouter: SearchRouterProtocol {
     
-    weak var configurationFactory: ConfigurationModuleFactoryProtocol?
+    private let configurationBuilder: ConfigurationModuleBuilderProtocol?
     weak var viewController: UIViewController?
     
-    init(configurationFactory: ConfigurationModuleFactoryProtocol?) {
-        self.configurationFactory = configurationFactory
+    init(configurationBuilder: ConfigurationModuleBuilderProtocol?) {
+        self.configurationBuilder = configurationBuilder
     }
     
     func configureSearch(currentConfig: ConfigurationEntity, output: ConfigurationModuleOutputProtocol) {
-        guard let module = configurationFactory?.createConfigurationModule(currentConfig: currentConfig,
+        guard let module = configurationBuilder?.createConfigurationModule(currentConfig: currentConfig,
                                                                            output: output) else {
             return
         }

@@ -10,28 +10,24 @@ import PetosaurKit
 
 final class SearchModuleBuilder {
     
-    private let provider: SearchProviderProtocol
-    private let configurationFactory: ConfigurationModuleFactoryProtocol?
+    private let resolver: Resolver
     
-    private init(provider: SearchProviderProtocol, configurationFactory: ConfigurationModuleFactoryProtocol?) {
-        self.provider = provider
-        self.configurationFactory = configurationFactory
-    }
-    
-    convenience init(resolver: Resolver) {
-        self.init(
-            provider: resolver.resolve(SearchProviderProtocol.self)!,
-            configurationFactory: resolver.resolve(ConfigurationModuleFactoryProtocol.self)
-        )
+    init(resolver: Resolver) {
+        self.resolver = resolver
     }
 }
 
 extension SearchModuleBuilder: SearchModuleBuilderProtocol {
     
     func createSearchModule() -> UIViewController {
+        
+        guard let provider = resolver.resolve(SearchProviderProtocol.self) else {
+            return UIViewController()
+        }
+        
         let view = SearchViewController()
         let interactor = SearchInteractor(provider: provider)
-        let router = SearchRouter(configurationFactory: configurationFactory)
+        let router = SearchRouter(configurationBuilder: resolver.resolve(ConfigurationModuleBuilderProtocol.self))
         let presenter = SearchPresenter(view: view, interactor: interactor, router: router)
         
         view.presenter = presenter
