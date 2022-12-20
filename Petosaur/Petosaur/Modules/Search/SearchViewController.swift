@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 final class SearchViewController: UIViewController, SearchViewProtocol {
     
@@ -21,7 +22,6 @@ final class SearchViewController: UIViewController, SearchViewProtocol {
     
     private lazy var tableView: UITableView = {
         let view = UITableView()
-        view.translatesAutoresizingMaskIntoConstraints = false
         view.separatorStyle = .none
         view.allowsSelection = false
         view.register(PodcastCell.self, forCellReuseIdentifier: tableViewCellId)
@@ -50,7 +50,6 @@ final class SearchViewController: UIViewController, SearchViewProtocol {
         stack.axis = .vertical
         stack.alignment = .center
         stack.spacing = 8
-        stack.translatesAutoresizingMaskIntoConstraints = false
         return stack
     }()
     
@@ -136,12 +135,9 @@ final class SearchViewController: UIViewController, SearchViewProtocol {
         tableView.delegate = self
         
         view.addSubview(tableView)
-        NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
-        ])
+        tableView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
     }
     
     private func configureErrorView(text: String?, imageName: String) {
@@ -151,13 +147,14 @@ final class SearchViewController: UIViewController, SearchViewProtocol {
         errorImage.image = UIImage(named: imageName)
         
         view.addSubview(errorView)
-        NSLayoutConstraint.activate([
-            errorView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            errorView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            errorView.widthAnchor.constraint(equalToConstant: 240),
-            errorImage.heightAnchor.constraint(equalToConstant: 80),
-            errorImage.widthAnchor.constraint(equalToConstant: 80)
-        ])
+        
+        errorImage.snp.makeConstraints { make in
+            make.height.width.equalTo(80)
+        }
+        errorView.snp.makeConstraints { make in
+            make.width.equalTo(240)
+            make.centerX.centerY.equalToSuperview()
+        }
     }
     
     @objc private func configButtonClicked() {
