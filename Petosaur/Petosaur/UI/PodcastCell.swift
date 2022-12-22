@@ -11,9 +11,6 @@ import SnapKit
 final class PodcastCell: UITableViewCell {
     
     private let artImageSize: CGFloat = 80.0
-    private var artImagePixelSize: CGFloat {
-        artImageSize * UIScreen.main.scale
-    }
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
@@ -37,6 +34,8 @@ final class PodcastCell: UITableViewCell {
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()
+    
+    private lazy var spinner = UIActivityIndicatorView()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -65,6 +64,12 @@ final class PodcastCell: UITableViewCell {
             make.width.equalTo(artImageSize)
             make.leading.equalToSuperview().offset(16)
         }
+        
+        addSubview(spinner)
+        spinner.snp.makeConstraints { make in
+            make.centerX.equalTo(artImage)
+            make.centerY.equalTo(artImage)
+        }
     }
     
     private func configureLabels() {
@@ -85,44 +90,49 @@ final class PodcastCell: UITableViewCell {
     }
     
     private func setImage(from url: URL?) {
+        
         guard let url = url else {
-            setFallbackImage()
+            setImage(nil)
             return
         }
         
-        DispatchQueue.global(qos: .background).async { [weak self] in
-            guard let image = self?.loadResizedImage(from: url) else {
-                self?.setFallbackImage()
-                return
-            }
-            DispatchQueue.main.async {
-                self?.artImage.image = image
-            }
+        artImage.image = nil
+        spinner.startAnimating()
+        
+        Task {
+            let image = await loadResizedImage(from: url)
+            setImage(image)
         }
     }
     
-    private func loadResizedImage(from url: URL) -> UIImage? {
-        guard let imageSource = CGImageSourceCreateWithURL(url as NSURL, nil) else {
-            return nil
-        }
-        
-        let options: [CFString: Any] = [
-            kCGImageSourceCreateThumbnailFromImageIfAbsent: true,
-            kCGImageSourceCreateThumbnailWithTransform: true,
-            kCGImageSourceShouldCacheImmediately: true,
-            kCGImageSourceThumbnailMaxPixelSize: artImagePixelSize
-        ]
-        
-        if let image = CGImageSourceCreateThumbnailAtIndex(imageSource, 0, options as CFDictionary) {
-            return UIImage(cgImage: image)
-        } else {
-            return nil
-        }
+    private func setImage(_ image: UIImage?) {
+        artImage.image = image ?? UIImage(named: "NoData")
+        spinner.stopAnimating()
     }
     
-    private func setFallbackImage() {
-        DispatchQueue.main.async {
-            self.artImage.image = UIImage(named: "NoData")
+    private func loadResizedImage(from url: URL) async -> UIImage? {
+        let artImagePixelSize = artImageSize * UIScreen.main.scale
+        
+        return await withUnsafeContinuation { continuation in
+            DispatchQueue.global(qos: .background).async {
+                guard let imageSource = CGImageSourceCreateWithURL(url as NSURL, nil) else {
+                    continuation.resume(returning: nil)
+                    return
+                }
+                
+                let options: [CFString: Any] = [
+                    kCGImageSourceCreateThumbnailFromImageIfAbsent: true,
+                    kCGImageSourceCreateThumbnailWithTransform: true,
+                    kCGImageSourceShouldCacheImmediately: true,
+                    kCGImageSourceThumbnailMaxPixelSize: artImagePixelSize
+                ]
+                
+                if let image = CGImageSourceCreateThumbnailAtIndex(imageSource, 0, options as CFDictionary) {
+                    continuation.resume(returning: UIImage(cgImage: image))
+                } else {
+                    continuation.resume(returning: nil)
+                }
+            }
         }
     }
 }
