@@ -8,6 +8,13 @@
 import UIKit
 import SnapKit
 
+private protocol CancelableTask {
+    
+    func cancel()
+}
+
+extension Task: CancelableTask { }
+
 final class PodcastCell: UITableViewCell {
     
     private let artImageSize: CGFloat = 80.0
@@ -36,6 +43,8 @@ final class PodcastCell: UITableViewCell {
     }()
     
     private lazy var spinner = UIActivityIndicatorView()
+    
+    private var loadThumbnailTask: CancelableTask?
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -91,6 +100,8 @@ final class PodcastCell: UITableViewCell {
     
     private func setImage(from url: URL?) {
         
+        loadThumbnailTask?.cancel()
+        
         guard let url = url else {
             setImage(nil)
             return
@@ -99,39 +110,68 @@ final class PodcastCell: UITableViewCell {
         artImage.image = nil
         spinner.startAnimating()
         
-        Task {
-            let image = await loadResizedImage(from: url)
-            setImage(image)
+        if #available(iOS 15.0, *) {
+            loadThumbnailTask = Task {
+                let image = try await loadThumbnailImage(from: url)
+                try Task.checkCancellation()
+                setImage(image)
+            }
+        } else {
+            Task {
+                let task = createLoadThumbnailTask(from: url)
+                loadThumbnailTask = task
+                let image = try await task.value
+                if task.isCancelled == false {
+                    setImage(image)
+                }
+            }
         }
     }
     
     private func setImage(_ image: UIImage?) {
-        artImage.image = image ?? UIImage(named: "NoData")
-        spinner.stopAnimating()
+        let image = image ?? UIImage(named: "NoData")
+        UIView.transition(
+            with: artImage,
+            duration: 0.3,
+            options: .transitionCrossDissolve,
+            animations: {
+                self.artImage.image = image
+            },
+            completion: { _ in
+                self.spinner.stopAnimating()
+            }
+        )
     }
     
-    private func loadResizedImage(from url: URL) async -> UIImage? {
+    @available(iOS 15.0, *)
+    private func loadThumbnailImage(from url: URL) async throws -> UIImage? {
+        let pixelSize = artImageSize * UIScreen.main.scale
+        let size = CGSize(width: pixelSize, height: pixelSize)
+        let (data, _) = try await URLSession.shared.data(from: url)
+        try Task.checkCancellation()
+        return await UIImage(data: data)?.byPreparingThumbnail(ofSize: size)
+    }
+    
+    private func createLoadThumbnailTask(from url: URL) -> Task<UIImage?, Error> {
         let artImagePixelSize = artImageSize * UIScreen.main.scale
-        
-        return await withUnsafeContinuation { continuation in
-            DispatchQueue.global(qos: .background).async {
-                guard let imageSource = CGImageSourceCreateWithURL(url as NSURL, nil) else {
-                    continuation.resume(returning: nil)
-                    return
-                }
-                
-                let options: [CFString: Any] = [
-                    kCGImageSourceCreateThumbnailFromImageIfAbsent: true,
-                    kCGImageSourceCreateThumbnailWithTransform: true,
-                    kCGImageSourceShouldCacheImmediately: true,
-                    kCGImageSourceThumbnailMaxPixelSize: artImagePixelSize
-                ]
-                
-                if let image = CGImageSourceCreateThumbnailAtIndex(imageSource, 0, options as CFDictionary) {
-                    continuation.resume(returning: UIImage(cgImage: image))
-                } else {
-                    continuation.resume(returning: nil)
-                }
+        return Task.detached(priority: .userInitiated) { () -> UIImage? in
+            guard let imageSource = CGImageSourceCreateWithURL(url as NSURL, nil) else {
+                return nil
+            }
+            
+            try Task.checkCancellation()
+            
+            let options: [CFString: Any] = [
+                kCGImageSourceCreateThumbnailFromImageIfAbsent: true,
+                kCGImageSourceCreateThumbnailWithTransform: true,
+                kCGImageSourceShouldCacheImmediately: true,
+                kCGImageSourceThumbnailMaxPixelSize: artImagePixelSize
+            ]
+            
+            if let image = CGImageSourceCreateThumbnailAtIndex(imageSource, 0, options as CFDictionary) {
+                return UIImage(cgImage: image)
+            } else {
+                return nil
             }
         }
     }
