@@ -25,7 +25,6 @@
 		4F3CF0C62923FA410023F685 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3CF0C52923FA410023F685 /* AppDelegate.swift */; };
 		4F3CF0C82923FA410023F685 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3CF0C72923FA410023F685 /* SceneDelegate.swift */; };
 		4F3CF0CF2923FA420023F685 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F3CF0CE2923FA420023F685 /* Assets.xcassets */; };
-		4F3CF0D22923FA420023F685 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F3CF0D02923FA420023F685 /* LaunchScreen.storyboard */; };
 		4F3CF0DD2923FA420023F685 /* PetosaurTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3CF0DC2923FA420023F685 /* PetosaurTests.swift */; };
 		4F3CF0E72923FA420023F685 /* PetosaurUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3CF0E62923FA420023F685 /* PetosaurUITests.swift */; };
 		4F3CF0E92923FA420023F685 /* PetosaurUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3CF0E82923FA420023F685 /* PetosaurUITestsLaunchTests.swift */; };
@@ -125,7 +124,6 @@
 		4F3CF0C52923FA410023F685 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4F3CF0C72923FA410023F685 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		4F3CF0CE2923FA420023F685 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		4F3CF0D12923FA420023F685 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4F3CF0D32923FA420023F685 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F3CF0D82923FA420023F685 /* PetosaurTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PetosaurTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F3CF0DC2923FA420023F685 /* PetosaurTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetosaurTests.swift; sourceTree = "<group>"; };
@@ -284,7 +282,6 @@
 				4FC870552950DE52000AF74A /* Modules */,
 				4FC8706E2950E1B4000AF74A /* UI */,
 				4F3CF0CE2923FA420023F685 /* Assets.xcassets */,
-				4F3CF0D02923FA420023F685 /* LaunchScreen.storyboard */,
 				4F3CF0D32923FA420023F685 /* Info.plist */,
 			);
 			path = Petosaur;
@@ -564,7 +561,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4F3CF0D22923FA420023F685 /* LaunchScreen.storyboard in Resources */,
 				4F3CF0CF2923FA420023F685 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -701,17 +697,6 @@
 		};
 /* End PBXTargetDependency section */
 
-/* Begin PBXVariantGroup section */
-		4F3CF0D02923FA420023F685 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4F3CF0D12923FA420023F685 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
 		4F3CF0EA2923FA420023F685 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -838,7 +823,6 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Petosaur/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -868,7 +852,6 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Petosaur/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
