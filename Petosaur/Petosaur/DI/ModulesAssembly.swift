@@ -13,5 +13,6 @@ final class ModulesAssembly: Assembly {
         
         container.register(SearchModuleBuilderProtocol.self) { SearchModuleBuilder(resolver: $0) }
         container.register(ConfigurationModuleBuilderProtocol.self) { ConfigurationModuleBuilder(resolver: $0) }
+        container.register(CategoriesModuleBuilderProtocol.self) { CategoriesModuleBuilder(resolver: $0) }
     }
 }

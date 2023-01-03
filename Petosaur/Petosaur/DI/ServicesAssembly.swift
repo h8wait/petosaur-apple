@@ -15,9 +15,12 @@ final class ServicesAssembly: Assembly {
         let sceneService = SceneService(resolver: container)
         container.register(SceneServiceProtocol.self) { _ in sceneService }
         
-        let provider = SearchResultDataProvider(
+        let searchProvider = SearchResultDataProvider(
             endpointURL: URL(string: "https://601f1754b5a0e9001706a292.mockapi.io")
         )
-        container.register(SearchProviderProtocol.self) { _ in provider }
+        container.register(SearchProviderProtocol.self) { _ in searchProvider }
+        
+        let categoriesProvider =  CategoriesDataProvider()
+        container.register(CategoriesProviderProtocol.self) { _ in categoriesProvider }
     }
 }

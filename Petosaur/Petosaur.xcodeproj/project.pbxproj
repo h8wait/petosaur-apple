@@ -34,6 +34,11 @@
 		4F914F7E295229790085B9C7 /* ConfigurationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F914F79295229790085B9C7 /* ConfigurationInteractor.swift */; };
 		4F914F7F295229790085B9C7 /* ConfigurationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F914F7A295229790085B9C7 /* ConfigurationPresenter.swift */; };
 		4F914F82295229F70085B9C7 /* CategoriesProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F914F81295229F70085B9C7 /* CategoriesProtocols.swift */; };
+		4F96AE722964BEC100289935 /* CategoriesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F96AE6D2964BEC100289935 /* CategoriesPresenter.swift */; };
+		4F96AE732964BEC100289935 /* CategoriesModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F96AE6E2964BEC100289935 /* CategoriesModuleBuilder.swift */; };
+		4F96AE742964BEC100289935 /* CategoriesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F96AE6F2964BEC100289935 /* CategoriesRouter.swift */; };
+		4F96AE752964BEC100289935 /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F96AE702964BEC100289935 /* CategoriesViewController.swift */; };
+		4F96AE762964BEC100289935 /* CategoriesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F96AE712964BEC100289935 /* CategoriesInteractor.swift */; };
 		4FC8705C2950DE7D000AF74A /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC870562950DE7D000AF74A /* SearchPresenter.swift */; };
 		4FC8705D2950DE7D000AF74A /* SearchModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC870572950DE7D000AF74A /* SearchModuleBuilder.swift */; };
 		4FC8705E2950DE7D000AF74A /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC870582950DE7D000AF74A /* SearchViewController.swift */; };
@@ -136,6 +141,11 @@
 		4F914F79295229790085B9C7 /* ConfigurationInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurationInteractor.swift; sourceTree = "<group>"; };
 		4F914F7A295229790085B9C7 /* ConfigurationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurationPresenter.swift; sourceTree = "<group>"; };
 		4F914F81295229F70085B9C7 /* CategoriesProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesProtocols.swift; sourceTree = "<group>"; };
+		4F96AE6D2964BEC100289935 /* CategoriesPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesPresenter.swift; sourceTree = "<group>"; };
+		4F96AE6E2964BEC100289935 /* CategoriesModuleBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesModuleBuilder.swift; sourceTree = "<group>"; };
+		4F96AE6F2964BEC100289935 /* CategoriesRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesRouter.swift; sourceTree = "<group>"; };
+		4F96AE702964BEC100289935 /* CategoriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
+		4F96AE712964BEC100289935 /* CategoriesInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesInteractor.swift; sourceTree = "<group>"; };
 		4FC870562950DE7D000AF74A /* SearchPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
 		4FC870572950DE7D000AF74A /* SearchModuleBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchModuleBuilder.swift; sourceTree = "<group>"; };
 		4FC870582950DE7D000AF74A /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -307,7 +317,12 @@
 		4F914F80295229B50085B9C7 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				4F96AE712964BEC100289935 /* CategoriesInteractor.swift */,
+				4F96AE6E2964BEC100289935 /* CategoriesModuleBuilder.swift */,
+				4F96AE6D2964BEC100289935 /* CategoriesPresenter.swift */,
 				4F914F81295229F70085B9C7 /* CategoriesProtocols.swift */,
+				4F96AE6F2964BEC100289935 /* CategoriesRouter.swift */,
+				4F96AE702964BEC100289935 /* CategoriesViewController.swift */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -611,15 +626,20 @@
 				4FC870602950DE7D000AF74A /* SearchProtocols.swift in Sources */,
 				4FC8705E2950DE7D000AF74A /* SearchViewController.swift in Sources */,
 				4F1A2FD0294CF614007428CC /* PetosaurDIContainer.swift in Sources */,
+				4F96AE732964BEC100289935 /* CategoriesModuleBuilder.swift in Sources */,
 				4FC870612950DE7D000AF74A /* SearchInteractor.swift in Sources */,
+				4F96AE752964BEC100289935 /* CategoriesViewController.swift in Sources */,
 				4F3CF0C82923FA410023F685 /* SceneDelegate.swift in Sources */,
 				4FC8705F2950DE7D000AF74A /* SearchRouter.swift in Sources */,
 				4FC870712950E1DE000AF74A /* PodcastCell.swift in Sources */,
 				4FC870722950E1DE000AF74A /* LoadingCell.swift in Sources */,
 				4F914F7D295229790085B9C7 /* ConfigurationViewController.swift in Sources */,
+				4F96AE742964BEC100289935 /* CategoriesRouter.swift in Sources */,
+				4F96AE762964BEC100289935 /* CategoriesInteractor.swift in Sources */,
 				4F914F7F295229790085B9C7 /* ConfigurationPresenter.swift in Sources */,
 				4FC870672950DFFF000AF74A /* PodcastEntity.swift in Sources */,
 				4F1A2FD4294CFB34007428CC /* ModulesAssembly.swift in Sources */,
+				4F96AE722964BEC100289935 /* CategoriesPresenter.swift in Sources */,
 				4F914F82295229F70085B9C7 /* CategoriesProtocols.swift in Sources */,
 				4FC8705C2950DE7D000AF74A /* SearchPresenter.swift in Sources */,
 				4FC8705D2950DE7D000AF74A /* SearchModuleBuilder.swift in Sources */,
