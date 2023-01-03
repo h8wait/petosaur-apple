@@ -42,7 +42,13 @@ final class SearchInteractor: SearchInteractorProtocol {
     }
     
     func startFetch(text: String?, title: String?, categoryName: String?, lastLoadedPage: UInt, limit: UInt) {
-        let model = createModel(search: text, title: title, categoryName: categoryName, page: lastLoadedPage + 1, limit: limit)
+        let model = createModel(
+            search: text,
+            title: title,
+            categoryName: categoryName,
+            page: lastLoadedPage + 1,
+            limit: limit
+        )
         provider.getByQuery(model) { [weak self] result in
             switch result {
             case .success(let models):

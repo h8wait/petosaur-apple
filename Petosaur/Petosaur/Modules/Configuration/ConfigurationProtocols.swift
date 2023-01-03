@@ -18,26 +18,26 @@ protocol ConfigurationModuleBuilderProtocol: AnyObject {
     func createConfigurationModule(currentConfig: ConfigurationEntity, output: ConfigurationModuleOutputProtocol?) -> UIViewController
 }
 
-//MARK: View -
+// MARK: - View
 protocol ConfigurationViewProtocol: AnyObject {
     
-    var presenter: ConfigurationPresenterProtocol?  { get set }
+    var presenter: ConfigurationPresenterProtocol? { get set }
     
     func setTitleText(title: String?)
     func setCategoryText(category: String?)
 }
 
-//MARK: Interactor -
+// MARK: - Interactor
 protocol ConfigurationInteractorProtocol: AnyObject {
     
-    var presenter: ConfigurationPresenterProtocol?  { get set }
+    var presenter: ConfigurationPresenterProtocol? { get set }
     
     func createConfigResult(current: ConfigurationEntity,
                             newTitle: String?,
                             newCategoryName: String?) -> ConfigurationEntity?
 }
 
-//MARK: Presenter -
+// MARK: - Presenter
 protocol ConfigurationPresenterProtocol: AnyObject {
     
     func viewDidLoad()
@@ -48,7 +48,7 @@ protocol ConfigurationPresenterProtocol: AnyObject {
     func resetButtonDidTap()
 }
 
-//MARK: Router -
+// MARK: - Router
 protocol ConfigurationRouterProtocol: AnyObject {
     
     func chooseCategory(currentCategoryName: String?, output: CategoriesModuleOutputProtocol?)

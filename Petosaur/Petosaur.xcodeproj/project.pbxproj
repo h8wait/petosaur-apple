@@ -410,6 +410,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				4F96AE6B2964AD4D00289935 /* PBXTargetDependency */,
 				4FF81186294A40F900B17562 /* PBXTargetDependency */,
 			);
 			name = Petosaur;
@@ -542,6 +543,7 @@
 				4F07046B294BB41700372873 /* XCRemoteSwiftPackageReference "Swinject" */,
 				4FC870682950E089000AF74A /* XCRemoteSwiftPackageReference "RxSwift" */,
 				4FC870732950F410000AF74A /* XCRemoteSwiftPackageReference "SnapKit" */,
+				4F96AE692964AD1B00289935 /* XCRemoteSwiftPackageReference "SwiftLint" */,
 			);
 			productRefGroup = 4F3CF0C32923FA410023F685 /* Products */;
 			projectDirPath = "";
@@ -679,6 +681,10 @@
 			isa = PBXTargetDependency;
 			target = 4F3CF0C12923FA410023F685 /* Petosaur */;
 			targetProxy = 4F3CF0E32923FA420023F685 /* PBXContainerItemProxy */;
+		};
+		4F96AE6B2964AD4D00289935 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 4F96AE6A2964AD4D00289935 /* SwiftLintPlugin */;
 		};
 		4FF8117E294A40F900B17562 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1126,6 +1132,14 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		4F96AE692964AD1B00289935 /* XCRemoteSwiftPackageReference "SwiftLint" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/SwiftLint.git";
+			requirement = {
+				branch = "release-0.50.0-rc.4";
+				kind = branch;
+			};
+		};
 		4FC870682950E089000AF74A /* XCRemoteSwiftPackageReference "RxSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
@@ -1154,6 +1168,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 4F07046B294BB41700372873 /* XCRemoteSwiftPackageReference "Swinject" */;
 			productName = Swinject;
+		};
+		4F96AE6A2964AD4D00289935 /* SwiftLintPlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4F96AE692964AD1B00289935 /* XCRemoteSwiftPackageReference "SwiftLint" */;
+			productName = "plugin:SwiftLintPlugin";
 		};
 		4FC870692950E089000AF74A /* RxSwift */ = {
 			isa = XCSwiftPackageProductDependency;

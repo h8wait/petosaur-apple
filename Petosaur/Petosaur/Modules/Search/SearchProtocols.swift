@@ -13,10 +13,10 @@ protocol SearchModuleBuilderProtocol {
     func createSearchModule() -> UIViewController
 }
 
-//MARK: View -
+// MARK: - View
 protocol SearchViewProtocol: AnyObject {
     
-    var presenter: SearchPresenterProtocol?  { get set }
+    var presenter: SearchPresenterProtocol? { get set }
     
     func prepareForSearchResult()
     func showPodcasts(searchedItems: [PodcastEntity])
@@ -27,16 +27,16 @@ protocol SearchViewProtocol: AnyObject {
     func showEmptyResult()
 }
 
-//MARK: Interactor -
+// MARK: - Interactor
 protocol SearchInteractorProtocol: AnyObject {
     
-    var presenter: SearchPresenterProtocol?  { get set }
+    var presenter: SearchPresenterProtocol? { get set }
     
     func startSearch(text: String?, title: String?, categoryName: String?, page: UInt, limit: UInt)
     func startFetch(text: String?, title: String?, categoryName: String?, lastLoadedPage: UInt, limit: UInt)
 }
 
-//MARK: Presenter -
+// MARK: - Presenter
 protocol SearchPresenterProtocol: AnyObject {
     
     func viewDidLoad()
@@ -55,7 +55,7 @@ protocol SearchPresenterProtocol: AnyObject {
     func fetchDidFailed()
 }
 
-//MARK: Router -
+// MARK: - Router
 protocol SearchRouterProtocol: AnyObject {
     
     func configureSearch(currentConfig: ConfigurationEntity, output: ConfigurationModuleOutputProtocol)

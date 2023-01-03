@@ -121,7 +121,11 @@ final class SearchViewController: UIViewController, SearchViewProtocol {
     
     private func configureNavigationBar() {
         // Button to configure search parameters
-        let button = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(configButtonClicked))
+        let button = UIBarButtonItem(
+            barButtonSystemItem: .compose,
+            target: self,
+            action: #selector(configButtonClicked)
+        )
         navigationItem.rightBarButtonItem = button
         
         // Add search to navigation bar

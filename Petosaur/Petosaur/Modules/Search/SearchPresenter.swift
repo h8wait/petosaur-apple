@@ -10,7 +10,7 @@ import RxSwift
 
 final class SearchPresenter: SearchPresenterProtocol {
     
-    //MARK: State -
+    // MARK: State
     private var searchText: String?
     private var searchTitle: String?
     private var searchCategoryName: String?
@@ -48,7 +48,7 @@ final class SearchPresenter: SearchPresenterProtocol {
             .disposed(by: bag)
     }
     
-    //MARK: Public methods -
+    // MARK: Public methods
     
     func viewDidLoad() {
         textSubject.onNext(searchText)
@@ -59,7 +59,7 @@ final class SearchPresenter: SearchPresenterProtocol {
         router.configureSearch(currentConfig: config, output: self)
     }
     
-    //MARK: Search
+    // MARK: Search
     
     func searchTextDidUpdate(text: String?) {
         searchText = text
@@ -87,7 +87,7 @@ final class SearchPresenter: SearchPresenterProtocol {
         hasMoreResults = false
     }
     
-    //MARK: Fetch
+    // MARK: Fetch
     
     func beginFetch() {
         guard hasMoreResults else {
@@ -108,7 +108,7 @@ final class SearchPresenter: SearchPresenterProtocol {
         view?.hideLoader()
     }
     
-    //MARK: Private methods -
+    // MARK: Private methods
     
     private func startSearch() {
         currentPage = 1
