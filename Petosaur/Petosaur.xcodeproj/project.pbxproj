@@ -28,6 +28,8 @@
 		4F3CF0DD2923FA420023F685 /* SearchInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3CF0DC2923FA420023F685 /* SearchInteractorTests.swift */; };
 		4F3CF0E72923FA420023F685 /* PetosaurUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3CF0E62923FA420023F685 /* PetosaurUITests.swift */; };
 		4F3CF0E92923FA420023F685 /* PetosaurUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3CF0E82923FA420023F685 /* PetosaurUITestsLaunchTests.swift */; };
+		4F6A4A432965F7E100E91930 /* CategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6A4A422965F7E100E91930 /* CategoriesView.swift */; };
+		4F6A4A462965FC2000E91930 /* CategoriesViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6A4A452965FC2000E91930 /* CategoriesViewAdapter.swift */; };
 		4F914F7B295229790085B9C7 /* ConfigurationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F914F76295229790085B9C7 /* ConfigurationRouter.swift */; };
 		4F914F7C295229790085B9C7 /* ConfigurationModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F914F77295229790085B9C7 /* ConfigurationModuleBuilder.swift */; };
 		4F914F7D295229790085B9C7 /* ConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F914F78295229790085B9C7 /* ConfigurationViewController.swift */; };
@@ -37,7 +39,6 @@
 		4F96AE722964BEC100289935 /* CategoriesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F96AE6D2964BEC100289935 /* CategoriesPresenter.swift */; };
 		4F96AE732964BEC100289935 /* CategoriesModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F96AE6E2964BEC100289935 /* CategoriesModuleBuilder.swift */; };
 		4F96AE742964BEC100289935 /* CategoriesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F96AE6F2964BEC100289935 /* CategoriesRouter.swift */; };
-		4F96AE752964BEC100289935 /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F96AE702964BEC100289935 /* CategoriesViewController.swift */; };
 		4F96AE762964BEC100289935 /* CategoriesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F96AE712964BEC100289935 /* CategoriesInteractor.swift */; };
 		4FC8705C2950DE7D000AF74A /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC870562950DE7D000AF74A /* SearchPresenter.swift */; };
 		4FC8705D2950DE7D000AF74A /* SearchModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC870572950DE7D000AF74A /* SearchModuleBuilder.swift */; };
@@ -135,6 +136,8 @@
 		4F3CF0E22923FA420023F685 /* PetosaurUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PetosaurUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F3CF0E62923FA420023F685 /* PetosaurUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetosaurUITests.swift; sourceTree = "<group>"; };
 		4F3CF0E82923FA420023F685 /* PetosaurUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetosaurUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		4F6A4A422965F7E100E91930 /* CategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesView.swift; sourceTree = "<group>"; };
+		4F6A4A452965FC2000E91930 /* CategoriesViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewAdapter.swift; sourceTree = "<group>"; };
 		4F914F76295229790085B9C7 /* ConfigurationRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurationRouter.swift; sourceTree = "<group>"; };
 		4F914F77295229790085B9C7 /* ConfigurationModuleBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurationModuleBuilder.swift; sourceTree = "<group>"; };
 		4F914F78295229790085B9C7 /* ConfigurationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurationViewController.swift; sourceTree = "<group>"; };
@@ -144,7 +147,6 @@
 		4F96AE6D2964BEC100289935 /* CategoriesPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesPresenter.swift; sourceTree = "<group>"; };
 		4F96AE6E2964BEC100289935 /* CategoriesModuleBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesModuleBuilder.swift; sourceTree = "<group>"; };
 		4F96AE6F2964BEC100289935 /* CategoriesRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesRouter.swift; sourceTree = "<group>"; };
-		4F96AE702964BEC100289935 /* CategoriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
 		4F96AE712964BEC100289935 /* CategoriesInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesInteractor.swift; sourceTree = "<group>"; };
 		4FC870562950DE7D000AF74A /* SearchPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
 		4FC870572950DE7D000AF74A /* SearchModuleBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchModuleBuilder.swift; sourceTree = "<group>"; };
@@ -322,7 +324,8 @@
 				4F96AE6D2964BEC100289935 /* CategoriesPresenter.swift */,
 				4F914F81295229F70085B9C7 /* CategoriesProtocols.swift */,
 				4F96AE6F2964BEC100289935 /* CategoriesRouter.swift */,
-				4F96AE702964BEC100289935 /* CategoriesViewController.swift */,
+				4F6A4A422965F7E100E91930 /* CategoriesView.swift */,
+				4F6A4A452965FC2000E91930 /* CategoriesViewAdapter.swift */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -628,11 +631,11 @@
 				4F1A2FD0294CF614007428CC /* PetosaurDIContainer.swift in Sources */,
 				4F96AE732964BEC100289935 /* CategoriesModuleBuilder.swift in Sources */,
 				4FC870612950DE7D000AF74A /* SearchInteractor.swift in Sources */,
-				4F96AE752964BEC100289935 /* CategoriesViewController.swift in Sources */,
 				4F3CF0C82923FA410023F685 /* SceneDelegate.swift in Sources */,
 				4FC8705F2950DE7D000AF74A /* SearchRouter.swift in Sources */,
 				4FC870712950E1DE000AF74A /* PodcastCell.swift in Sources */,
 				4FC870722950E1DE000AF74A /* LoadingCell.swift in Sources */,
+				4F6A4A432965F7E100E91930 /* CategoriesView.swift in Sources */,
 				4F914F7D295229790085B9C7 /* ConfigurationViewController.swift in Sources */,
 				4F96AE742964BEC100289935 /* CategoriesRouter.swift in Sources */,
 				4F96AE762964BEC100289935 /* CategoriesInteractor.swift in Sources */,
@@ -642,6 +645,7 @@
 				4F96AE722964BEC100289935 /* CategoriesPresenter.swift in Sources */,
 				4F914F82295229F70085B9C7 /* CategoriesProtocols.swift in Sources */,
 				4FC8705C2950DE7D000AF74A /* SearchPresenter.swift in Sources */,
+				4F6A4A462965FC2000E91930 /* CategoriesViewAdapter.swift in Sources */,
 				4FC8705D2950DE7D000AF74A /* SearchModuleBuilder.swift in Sources */,
 				4FC870662950DFFF000AF74A /* ConfigurationEntity.swift in Sources */,
 				4F914F7C295229790085B9C7 /* ConfigurationModuleBuilder.swift in Sources */,

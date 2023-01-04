@@ -5,7 +5,7 @@
 //  Created by h8wait on 03.01.2023.
 //
 
-import UIKit
+import SwiftUI
 import PetosaurKit
 
 final class CategoriesModuleBuilder {
@@ -25,15 +25,17 @@ extension CategoriesModuleBuilder: CategoriesModuleBuilderProtocol {
             return UIViewController()
         }
         
-        let view = CategoriesViewController()
+        let viewAdapter = CategoriesViewAdapter()
+        let view = CategoriesView(adapter: viewAdapter)
+        let host = UIHostingController(rootView: view)
         let interactor = CategoriesInteractor(categoriesProvider: provider)
         let router = CategoriesRouter()
-        let presenter = CategoriesPresenter(view: view, interactor: interactor, router: router, output: output)
+        let presenter = CategoriesPresenter(view: viewAdapter, interactor: interactor, router: router, output: output)
         
-        view.presenter = presenter
+        viewAdapter.presenter = presenter
         interactor.presenter = presenter
-        router.viewController = view
+        router.viewController = host
         
-        return view
+        return host
     }
 }
