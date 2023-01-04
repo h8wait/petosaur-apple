@@ -81,7 +81,7 @@ final class SearchInteractor: SearchInteractorProtocol {
     }
     
     private func completeSearchIfNeeded(lastPage: [PodcastModel], pageLimit: UInt) {
-        if lastPage.count < pageLimit {
+        if pageLimit == 0 || lastPage.count < pageLimit {
             presenter?.searchDidComplete()
         }
     }
